@@ -1,0 +1,10 @@
+RewriteEngine On
+
+# Mengizinkan akses ke file tertentu
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ eror-handle.php [F,L]
+
+# Mengizinkan akses ke file dengan ekstensi tertentu (misalnya .jpg, .png, .gif)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule \.(jpg|jpeg|png|gif)$ - [L]
